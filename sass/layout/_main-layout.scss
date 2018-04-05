@@ -1,0 +1,16 @@
+// main grid
+.site {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 40px auto;
+    }
+// Not showing the title on pages
+.site-branding {
+    display: none;
+}
+
+
+
+@media screen and (min-width: 37.5em) {
+
+}
