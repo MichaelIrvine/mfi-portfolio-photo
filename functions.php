@@ -130,7 +130,7 @@ function sassen_scripts() {
 
 	wp_enqueue_script( 'sassen-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
-	wp_enqueue_style('sassen-googlefonts', 'href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,600,700|Lato"' );
+	// wp_enqueue_style('sassen-googlefonts', '' );
 
 	wp_enqueue_script( 'sassen-script', get_template_directory_uri() . '/js/sassenscript.js', array(), '20180222', true );
 

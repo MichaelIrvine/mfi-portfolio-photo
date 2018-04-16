@@ -29,17 +29,15 @@ get_header(); ?>
 
 				
 				<section>
+				<ul>
 				<?php foreach( $images as $image ): ?>
-					
-						<ul>
-							<li>
-								<?php 
-								echo wp_get_attachment_image( $image['ID'], $size );
-								?>
-							</li>
-						</ul>
-					
+					<li>
+						<?php 
+							echo wp_get_attachment_image( $image['ID'], $size );
+						?>
+					</li>					
 				<?php endforeach; ?>
+				</ul>
 				</section>
 					
 				<?php endif; ?>

@@ -1,19 +1,41 @@
 // main grid
 .site {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 110px 1fr;
     grid-template-rows: auto;
 
-        .site-main {
-        grid-row: 2;
-        height: 100vh;
+    .site-header {
+        grid-column: 1 / -1;
+        grid-row: 1;
+    }
+
+    .site-branding {
+        grid-column: 1;
+        grid-row: 2 / -1;
+
+        position: fixed;
+        top: 50vh;
+        left: -25px;
+
+       h1.site-title {
+            transform: rotate(-90deg);
+            
+            font-size: 1em;
         }
     }
 
+    .site-content {
+        grid-column: 2;
+        grid-row: 2;
 
-// Not showing the title on pages
-.site-branding {
-    display: none;
+        height: 100vh;
+    }
+
+
 }
+
+
+
+
 
 

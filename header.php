@@ -25,9 +25,28 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'sassen' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="site-branding">
+
+
+		<nav id="site-navigation" class="main-navigation">
+			<!-- <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"></button> -->
+			    
 			<?php
-			the_custom_logo();
+				wp_nav_menu( array(
+					'theme_location' => 'menu-1',
+					'menu_id'        => 'primary-menu',
+				) );
+			?>
+				<ul>
+					<li class="line-one">yo</li>
+					<li class="line-two">yo</li>
+				</ul>
+		</nav><!-- #site-navigation -->
+
+
+	</header><!-- #masthead -->
+			<div class="site-branding">
+		<?php
+		the_custom_logo();
 			if ( is_front_page() && is_home() ) : ?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php else : ?>
@@ -41,17 +60,5 @@
 			<?php
 			endif; ?>
 		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation">
-			<!-- <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"></button> -->
-			    
-			<?php
-				wp_nav_menu( array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				) );
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
