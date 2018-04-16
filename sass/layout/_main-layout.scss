@@ -4,6 +4,7 @@
     grid-template-columns: 110px 1fr;
     grid-template-rows: auto;
 
+
     .site-header {
         grid-column: 1 / -1;
         grid-row: 1;
@@ -16,6 +17,7 @@
         position: fixed;
         top: 50vh;
         left: -25px;
+        z-index: 99;
 
        h1.site-title {
             transform: rotate(-90deg);

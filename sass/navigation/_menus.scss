@@ -126,29 +126,95 @@
 
 
 // --------------------------
-// Main Desktop Grid 
+// Main Desktop Nav
 // --------------------------
 
-.main-navigation {
-  grid-column: 1 / -1;
-  border: 1px solid;
-  padding: 10px;
-  margin: 10px;
+.menu-main-menu-container {
 
+    .menu {
+      display: flex;
+      position: fixed;
+      top: 12px;
+      right: 60px;
+      margin: 0;
+      padding: 0;
+      z-index: 99;
+    }
+
+    li {
+      margin-right: 30px;
+      cursor: pointer;
+    }
+
+    .menu-item-23 {
+      transition: all 0.3s ease;
+    }
+
+    .menu-item-25 {
+      transition: all 0.6s ease;
+    }
+
+    .menu-item-24 {
+      transition: all 0.9s ease;
+    }
+
+    .hide-menu {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+}
+
+ul.underline {
   display: flex;
-  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+  z-index: 99;
 
 
-  ul.menu {
-      width: 80px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+  li.line-one {
+    height: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: fixed;
+    top: 40px;
+    right: 220px;
   }
 
-  li {
-    width: 50px;
+  li.line-one:before {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 65px;
+    background: #000000;
+  }
+
+  li.line-two {
+    height: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: fixed;
+    top: 40px;
+    right: 160px;
+  }
+
+  li.line-two:before {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 60px;
+    background: #000000;
   }
 
 
 
 }
+
+// li.line-one,
+// li.line-two {
+//     width: 60px;
+//     height: 1px;
+//     background: #000000;
+//     cursor: pointer;
+//     padding: 5px;
+
+// }

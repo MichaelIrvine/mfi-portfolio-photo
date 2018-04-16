@@ -36,9 +36,9 @@
 					'menu_id'        => 'primary-menu',
 				) );
 			?>
-				<ul>
-					<li class="line-one">yo</li>
-					<li class="line-two">yo</li>
+				<ul class="underline">
+					<li class="line-one"></li>
+					<li class="line-two"></li>
 				</ul>
 		</nav><!-- #site-navigation -->
 
