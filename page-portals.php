@@ -14,7 +14,6 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
 			<?php
@@ -24,14 +23,15 @@ get_header(); ?>
 
 				$images = get_field('portals_one');
 				$size = 'full'; // (thumbnail, medium, large, full or custom size)
+				$i    = 0;
 
 				if( $images ): ?>
 
 				
-				<section>
-				<ul>
+				<section class="gallery">
+				<ul class="gallery_portals">
 				<?php foreach( $images as $image ): ?>
-					<li>
+					<li class="items item<?php echo $i++; // increment it! ?>">
 						<?php 
 							echo wp_get_attachment_image( $image['ID'], $size );
 						?>

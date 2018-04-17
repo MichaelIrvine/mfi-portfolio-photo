@@ -1,0 +1,28 @@
+//  Grid Gallery Layout
+
+
+
+
+.gallery {
+    
+
+    .gallery_portals {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10em 2em;
+        margin: 0;
+        padding: 0;
+
+        li.item0{
+            @include top-right;
+        }
+
+        li.item1 {
+            @include bottom-left;
+
+            img {
+                @include imageSmaller;
+            }
+        }
+    }
+}

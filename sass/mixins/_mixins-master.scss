@@ -30,3 +30,28 @@
 
 
 
+
+
+// Custom mixins for project galleries
+
+@mixin imageSmaller {
+	max-height: 550px;
+	width: auto;
+}
+
+@mixin centerImg {
+	justify-self: center;
+}
+
+@mixin bottom-left {
+	align-self: end;
+}
+
+@mixin top-right {
+	justify-self: end;
+}
+
+@mixin bottom-right {
+	justify-self: end;
+	align-self: end;
+}
