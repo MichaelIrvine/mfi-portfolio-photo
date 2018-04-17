@@ -120,9 +120,7 @@
 	display: none;
 }
 
-.show-menu {
-	display: flex;
-}
+
 
 
 // --------------------------
@@ -144,6 +142,11 @@
     li {
       margin-right: 30px;
       cursor: pointer;
+
+      a{
+      font-family: $font__main;
+      }
+      
     }
 
     .menu-item-23 {
@@ -161,6 +164,11 @@
     .hide-menu {
       opacity: 0;
       transform: translateY(-30px);
+    }
+
+    .show-menu {
+      opacity: 1;
+      transform: translateY(30px);
     }
 }
 

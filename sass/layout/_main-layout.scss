@@ -16,13 +16,13 @@
 
         position: fixed;
         top: 50vh;
-        left: -25px;
+        left: -100px;
         z-index: 99;
 
        h1.site-title {
             transform: rotate(-90deg);
-            
-            font-size: 1em;
+            font-size: 3em;
+            font-family: $font__title;
         }
     }
 

@@ -126,6 +126,8 @@ add_action( 'widgets_init', 'sassen_widgets_init' );
 function sassen_scripts() {
 	wp_enqueue_style( 'sassen-style', get_stylesheet_uri() );
 
+	wp_enqueue_script("jquery");
+
 	wp_enqueue_script( 'sassen-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'sassen-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
