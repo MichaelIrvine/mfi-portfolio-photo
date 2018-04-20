@@ -109,25 +109,22 @@
 
 // Desktop Menu
 .menu-mobile-container {
-	display: none;
+	display: flex;
 }
 
 .btn-menu {
 	display: none;
 }
 
-.sub-menu {
-	display: none;
-}
-
-
-
-
 // --------------------------
 // Main Desktop Nav
 // --------------------------
 
 .menu-main-menu-container {
+
+    @media screen and ( max-width: 700px ){
+                display: none;
+              }        
 
     .menu {
       display: flex;
@@ -172,11 +169,56 @@
     }
 }
 
+// --------------------------
+// Main Desktop Nav - Sub Menu For Work
+// --------------------------
+
+.menu ul li:hover > ul.sub-menu { 
+        opacity: 1;
+        }
+
+        ul.sub-menu {
+        position: fixed;
+        top: 50px;
+        right: 168px;
+        opacity: 1;
+        
+
+          li:first-child {
+            
+            transition: opacity 0.3s linear;
+          }
+
+          li:nth-child(2) {
+            transition: opacity 0.6s linear;
+          }
+
+          li:last-child {
+            transition: opacity 0.9s linear;
+          }
+
+        }
+
+
+
+
+
+
+
+// --------------------------
+// Lines 
+// --------------------------
+
+
 ul.underline {
   display: flex;
   margin: 0;
   padding: 0;
   z-index: 99;
+
+        @media screen and ( max-width: 700px ){
+                display: none;
+              }
 
 
   li.line-one {
@@ -224,3 +266,46 @@ ul.underline {
   }
 
 }
+
+
+
+// --------------------------
+// Mobile Round Button
+// --------------------------
+.round-btn {
+    position: fixed;
+    top: 75vh;
+    left: 50px;
+    background-color: #000;
+    height: 30px;
+    width: 30px;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: all 0.8s ease-in;
+    transform: translateX( -100px );
+
+      @media screen and ( max-width: 700px ){
+                transform: translateX( 0px );
+              }
+
+  .rel {
+    position: relative;
+  }
+
+  span {
+      display: block;
+      height: 2px;
+      width: 15px;
+      background-color: #fff;
+      margin: 0 auto;
+  }
+
+  span:first-child {
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+}
+
+

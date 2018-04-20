@@ -1,6 +1,8 @@
 jQuery(document).ready(function($) {
+    console.log("chrome test");
   // Desktop menu hide on scroll
   $(window).scroll(function() {
+    
     var y_scroll_pos = window.pageYOffset;
     var scrollPosition = 250;
     var $menuList = $(".menu-item-23, .menu-item-24, .menu-item-25");
@@ -34,7 +36,7 @@ jQuery(document).ready(function($) {
         $menuList.toggleClass('show-menu');
        }); 
     } else {
-        return;
+        $('.line-one, .line-two').off('click'); 
         // Items won't be clickable
     }
   });

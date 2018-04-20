@@ -26,6 +26,7 @@
 
 	<header id="masthead" class="site-header">
 
+		<h1 class="site-title__mobile"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 
 		<nav id="site-navigation" class="main-navigation">
 			<!-- <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"></button> -->

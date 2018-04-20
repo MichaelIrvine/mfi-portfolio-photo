@@ -22,11 +22,14 @@
 				));
 			?>
 
-			<button class="btn-menu" id="btn-menu">
-				<span class="linetop"></span>
-				<span class="menu">MENU</span>
-				<span class="linebottom"></span>
-			</button>
+		  <div class="round-btn">
+    		<div class="rel">
+				<span></span>
+				<span></span>
+    		</div>
+		  </div>
+		  
+		  
 		<div class="site-info">
 
 		</div><!-- .site-info -->

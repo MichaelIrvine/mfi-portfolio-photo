@@ -128,15 +128,13 @@ function sassen_scripts() {
 
 	wp_enqueue_script("jquery");
 
+	wp_enqueue_script( 'sassen-script', get_template_directory_uri() . '/js/sassenscript.js', array(), '20180417', true );
+
 	wp_enqueue_script( 'sassen-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'sassen-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
-
-	wp_enqueue_script( 'sassen-script', get_template_directory_uri() . '/js/sassenscript.js', array(), '20180222', true );
-
-
-		wp_enqueue_style('mindset-googlefonts', 'https://fonts.googleapis.com/css?family=Arapey|Montserrat" rel="stylesheet' );
+	wp_enqueue_style('sassen-googlefonts', 'https://fonts.googleapis.com/css?family=Arapey|Montserrat" rel="stylesheet' );
 	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
