@@ -1,5 +1,6 @@
 jQuery(document).ready(function($) {
-    console.log("chrome test");
+  
+
   // Desktop menu hide on scroll
   $(window).scroll(function() {
     
@@ -40,4 +41,8 @@ jQuery(document).ready(function($) {
         // Items won't be clickable
     }
   });
+
+
+
+
 });

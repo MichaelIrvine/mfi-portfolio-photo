@@ -4,6 +4,10 @@
     grid-template-columns: 110px 1fr;
     grid-template-rows: 110px auto;
 
+    @media screen and ( max-width: 600px ) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 60px auto;
+    }
 
     .site-header {
         display: grid;
@@ -49,8 +53,12 @@
     .site-content {
         grid-column: 2;
         grid-row: 2;
-
         height: 100vh;
+
+        @media screen and ( max-width: 600px ){
+            grid-column: 1;
+            grid-row: 2;
+        }
     }
 
 

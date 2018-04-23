@@ -165,7 +165,7 @@
 
     .show-menu {
       opacity: 1;
-      transform: translateY(30px);
+      transform: translateY( 0 );
     }
 }
 
@@ -173,16 +173,13 @@
 // Main Desktop Nav - Sub Menu For Work
 // --------------------------
 
-.menu ul li:hover > ul.sub-menu { 
-        opacity: 1;
-        }
-
         ul.sub-menu {
-        position: fixed;
-        top: 50px;
-        right: 168px;
-        opacity: 1;
-        
+            position: absolute;
+            top: 15px;
+            right: 145px;
+            display: none;
+            min-width: 70%;
+            padding: 20px;
 
           li:first-child {
             
@@ -198,6 +195,10 @@
           }
 
         }
+
+.menu .menu-item-23:hover .sub-menu  {
+    display: block;
+}
 
 
 

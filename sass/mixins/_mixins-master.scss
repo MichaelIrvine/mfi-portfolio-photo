@@ -1,3 +1,52 @@
+
+// Custom mixins for project galleries
+
+
+/* -------- For Image Sizes --------- */
+
+@mixin imageSmaller {
+	max-height: 550px;
+	width: auto;
+}
+
+@mixin imageMobile {
+	max-height: 440px;
+	width: auto;
+	margin: 0 auto;
+}
+
+/* ----------------------------------- */
+
+
+/* -------- For Image Position ------- */
+
+@mixin centerImg {
+	justify-self: center;
+}
+
+@mixin bottom-left {
+	align-self: end;
+}
+
+@mixin top-right {
+	justify-self: end;
+}
+
+@mixin bottom-right {
+	justify-self: end;
+	align-self: end;
+}
+
+/* ----------------------------------- */
+
+
+
+
+
+
+
+/* -------- UnderScores Mixins ------- */
+
 // Rem output with px fallback
 @mixin font-size($sizeValue: 1) {
 	font-size: ($sizeValue * 16) * 1px;
@@ -28,30 +77,4 @@
 	width: map-get( $columns, $numberColumns ) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
 }
 
-
-
-
-
-// Custom mixins for project galleries
-
-@mixin imageSmaller {
-	max-height: 550px;
-	width: auto;
-}
-
-@mixin centerImg {
-	justify-self: center;
-}
-
-@mixin bottom-left {
-	align-self: end;
-}
-
-@mixin top-right {
-	justify-self: end;
-}
-
-@mixin bottom-right {
-	justify-self: end;
-	align-self: end;
-}
+/* ----------------------------------- */

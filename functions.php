@@ -44,8 +44,9 @@ if ( ! function_exists( 'sassen_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'sassen' ),
-			'mobile' => esc_html__('Mobile', 'sassen')
+			'menu-1'  => esc_html__( 'Primary', 'sassen' ),
+			'mobile'  => esc_html__('Mobile', 'sassen'),
+			'special' => esc_html__('Special', 'sassen' )
 		) );
 
 		/*

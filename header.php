@@ -36,6 +36,11 @@
 					'theme_location' => 'menu-1',
 					'menu_id'        => 'primary-menu',
 				) );
+
+				wp_nav_menu( array(
+					'theme_location' => 'special',
+					'menu_id'        => 'special',
+				) );
 			?>
 				<ul class="underline">
 					<li class="line-one"></li>

@@ -5,14 +5,29 @@
 
 .gallery {
     
-
     .gallery_portals {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 10em 2em;
         margin: 0;
+        margin-right: 3em;
         padding: 0;
 
+        @media screen and (max-width: 600px) {
+            grid-template-columns: 1fr;
+            grid-gap: 5em 2em;
+
+        }
+
+        // Media Query for image on small screen
+        li img {
+            @media screen and (max-width: 600px) {
+                @include imageMobile;
+
+            } 
+        }
+
+        // Position and sizing for gallery Images
         li.item0{
             @include top-right;
         }
@@ -24,5 +39,34 @@
                 @include imageSmaller;
             }
         }
+
+        li.item2 {
+            @include bottom-right;
+
+            img {
+                @include imageSmaller;
+            }
+        }
+
+        li.item3 {
+            @include bottom-left;
+        }
+
+        li.item4 {
+            @include top-right;
+
+        }
+
+        li.item5 {
+            @include bottom-right;
+            
+            img {
+                @include imageSmaller;
+            }
+        }
     }
 }
+
+
+
+
