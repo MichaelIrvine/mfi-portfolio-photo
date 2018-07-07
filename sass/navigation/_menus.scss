@@ -1,116 +1,12 @@
-// .main-navigation {
-// 	clear: both;
-// 	display: block;
-// 	float: left;
-// 	width: 100%;
 
-// 	ul {
-// 		display: none;
-// 		list-style: none;
-// 		margin: 0;
-// 		padding-left: 0;
-
-// 		ul {
-// 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-// 			float: left;
-// 			position: absolute;
-// 			top: 100%;
-// 			left: -999em;
-// 			z-index: 99999;
-
-// 			ul {
-// 				left: -999em;
-// 				top: 0;
-// 			}
-
-// 			li {
-// 				&:hover > ul,
-// 				&.focus > ul {
-// 					left: 100%;
-// 				}
-// 			}
-
-// 			a {
-// 				width: 200px;
-// 			}
-
-// 			:hover > a,
-// 			.focus > a {
-// 			}
-
-// 			a:hover,
-// 			a.focus {
-// 			}
-// 		}
-
-// 		li:hover > ul,
-// 		li.focus > ul {
-// 			left: auto;
-// 		}
-// 	}
-
-// 	li {
-// 		float: left;
-// 		position: relative;
-
-// 		&:hover > a,
-// 		&.focus > a {
-// 		}
-// 	}
-
-// 	a {
-// 		display: block;
-// 		text-decoration: none;
-// 	}
-
-// 	.current_page_item > a,
-// 	.current-menu-item > a,
-// 	.current_page_ancestor > a,
-// 	.current-menu-ancestor > a {
-// 	}
-// }
-
-// /* Small menu. */
-// .menu-toggle,
-// .main-navigation.toggled ul {
-// 	display: block;
-// }
-
-// @media screen and (min-width: 37.5em) {
-// 	.menu-toggle {
-// 		display: none;
-// 	}
-// 	.main-navigation ul {
-// 		display: block;
-// 	}
-// }
-
-// .comment-navigation,
-// .posts-navigation,
-// .post-navigation {
-
-// 	.site-main & {
-// 		margin: 0 0 1.5em;
-// 		overflow: hidden;
-// 	}
-
-// 	.nav-previous {
-// 		float: left;
-// 		width: 50%;
-// 	}
-
-// 	.nav-next {
-// 		float: right;
-// 		text-align: right;
-// 		width: 50%;
-// 	}
-// }
 
 
 // Desktop Menu
 .menu-mobile-container {
 	display: flex;
 }
+
+
 
 .btn-menu {
 	display: none;
@@ -119,6 +15,7 @@
 // --------------------------
 // Main Desktop Nav
 // --------------------------
+
 
 .menu-main-menu-container {
 
@@ -142,6 +39,7 @@
 
       a{
       font-family: $font__main;
+      font-size: 0.85em;
       }
       
     }
@@ -209,13 +107,35 @@
 // --------------------------
 // Lines 
 // --------------------------
+.menu-toggle {
+  background:none;
+  border: none;
+  position: fixed;
+  top: 34px;
+  right: -50px;
+  width: 25px;
+  height: 24px;
+  z-index: 9999;
+  cursor: pointer;
+}
 
+.menu-toggle:focus {
+  outline: #fff;
+}
+
+  .button-animate {
+    right: 25px;
+  }
 
 ul.underline {
   display: flex;
   margin: 0;
   padding: 0;
   z-index: 99;
+  position: fixed;
+  top: 40px;
+  right: -20px;
+  width: 20px;
 
         @media screen and ( max-width: 700px ){
                 display: none;
@@ -224,12 +144,12 @@ ul.underline {
 
   li.line-one {
     height: 10px;
-    cursor: pointer;
     transition: all 0.9s ease;
     position: fixed;
     top: 40px;
     right: 260px;
     width: 20px;
+    z-index: 1;
   }
 
   li.line-one:before {
@@ -246,12 +166,12 @@ ul.underline {
 
   li.line-two {
     height: 10px;
-    cursor: pointer;
     transition: all 0.6s ease;
     position: fixed;
     top: 50px;
     right: -20px;
     width: 20px;
+    z-index: 1;
   }
 
   li.line-two:before {
@@ -265,6 +185,7 @@ ul.underline {
     width: 20px;
     transform: translateX(-50px);
   }
+
 
 }
 
@@ -310,3 +231,85 @@ ul.underline {
 }
 
 
+.mobile-cover {
+  display: none;
+
+  @media screen and ( max-width: 700px ){
+  display: flex;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: white;
+  opacity: 0;
+  transition: opacity 1s ease-in;
+  }
+}
+
+.mobile-cover.active {
+  opacity: 0.9;
+}
+
+.menu-mobile-container {
+    display: none;
+
+    @media screen and ( max-width: 700px ){
+    display: flex;
+    position: fixed;
+    top: 20%;
+    left: 10%;
+    border-left: 1px solid black;
+    animation-delay: 0.7s;
+  }
+
+  .active-fade {
+      animation: fadeIn 2s forwards;
+    }
+
+  #menu-3 {
+    list-style: none;
+    margin: 0;
+    padding-left: 1em;
+
+    li {
+      margin-bottom: 10px;
+      opacity: 0;
+      animation-delay: 0.7s;
+
+      a {
+        font-size: 1.3em;
+        -webkit-font-smoothing: antialiased;
+      }
+    }
+
+    li.active-fade {
+      animation: fadeIn 1.5s forwards;
+    }
+
+    li:first-child  {animation-delay: 1s;}
+    li:nth-child(2) {animation-delay: 0.8s}
+    li:nth-child(3) {animation-delay: 0.7s}
+    li:nth-child(4) {animation-delay: 0.5s}
+    li:nth-child(5) {animation-delay: 0.3s}
+  }
+
+}
+
+
+
+@keyframes growUp {
+  0%{height: 0};
+  100%{height: 70%; opacity: 1;};
+
+}
+
+@keyframes fadeIn {
+  0%{
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

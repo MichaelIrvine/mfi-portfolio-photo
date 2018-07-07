@@ -29,7 +29,12 @@
 		<h1 class="site-title__mobile"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 
 		<nav id="site-navigation" class="main-navigation">
-			<!-- <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"></button> -->
+			<button class="menu-toggle">
+				<ul class="underline">
+					<li class="line-one"></li>
+					<li class="line-two"></li>
+				</ul>
+			</button>
 			    
 			<?php
 				wp_nav_menu( array(
@@ -37,15 +42,8 @@
 					'menu_id'        => 'primary-menu',
 				) );
 
-				wp_nav_menu( array(
-					'theme_location' => 'special',
-					'menu_id'        => 'special',
-				) );
 			?>
-				<ul class="underline">
-					<li class="line-one"></li>
-					<li class="line-two"></li>
-				</ul>
+
 		</nav><!-- #site-navigation -->
 
 

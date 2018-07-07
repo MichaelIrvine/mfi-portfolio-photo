@@ -1,46 +1,56 @@
 jQuery(document).ready(function($) {
-  
+  const $btn      = $('.menu-toggle');
+  const $menuList = $(".menu-item-23, .menu-item-24, .menu-item-25");
 
   // Desktop menu hide on scroll
   $(window).scroll(function() {
     
-    var y_scroll_pos = window.pageYOffset;
-    var scrollPosition = 250;
-    var $menuList = $(".menu-item-23, .menu-item-24, .menu-item-25");
-
-    // Hides menu when viewer scrolls down
-    if (y_scroll_pos > scrollPosition) {
+    const scrollTrigger = window.pageYOffset > 250;
+    
+    if (scrollTrigger) {
+      // Hides menu when viewer scrolls down
       $menuList.addClass("hide-menu");
+      // Animates the lines
+      $(".line-one").addClass("line-one-animate");
+      $(".line-two").addClass("line-two-animate");
+      // For A11y purposes
+      $(".menu-toggle").addClass("button-animate");
     } else {
       $menuList.removeClass("hide-menu");
-    }
-
-    // Makes the Menu lines move 
-
-    // ----------- Top line ----------------------------
-    if (y_scroll_pos > scrollPosition) {
-      $(".line-one").addClass("line-one-animate");
-    } else {
       $(".line-one").removeClass("line-one-animate");
-    }
-
-    // ----------- Bottom line --------------------------
-    if (y_scroll_pos > scrollPosition) {
-      $(".line-two").addClass("line-two-animate");
-    } else {
       $(".line-two").removeClass("line-two-animate");
-    }
-
-    //
-    if (y_scroll_pos > scrollPosition) {
-       $('.line-one, .line-two').click(function(){
-        $menuList.toggleClass('show-menu');
-       }); 
-    } else {
-        $('.line-one, .line-two').off('click'); 
-        // Items won't be clickable
+      $(".menu-toggle").removeClass("button-animate");
     }
   });
+
+// Desktop Menu Button
+
+  $btn.click(function() { 
+    $menuList.removeClass('hide-menu');
+  });
+
+
+// --------------------------------------------------------------------------
+// ---------------------- MOBILE BUTTON & MENU ------------------------------
+// --------------------------------------------------------------------------
+
+const $mobileButton = $('.round-btn');
+const $mobileCover  = $('.mobile-cover');
+const $menuContainer = $('.menu-mobile-container');
+const $mobileMenuItems = $(".menu-item-152, .menu-item-154, .menu-item-155, .menu-item-156");
+
+$mobileButton.click(function(){
+  console.log('clickky');
+  $mobileCover.toggleClass('active');
+  // add active classes to menu
+  if ($mobileCover.hasClass('active') ){
+    $menuContainer.addClass('active-fade');
+    $mobileMenuItems.addClass("active-fade");
+  }else {
+    $menuContainer.removeClass("active-fade");
+    $mobileMenuItems.removeClass("active-fade");
+  }
+});
 
 
 
