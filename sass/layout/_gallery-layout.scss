@@ -1,7 +1,5 @@
 //  Grid Gallery Layout
-
-
-
+    
 
 .gallery {
     
@@ -27,46 +25,71 @@
             } 
         }
 
-        // Position and sizing for gallery Images
-        li.item0{
-            @include top-right;
-        }
+    // Classes for position of images and sizes
+    .img-center {
+        justify-self: center;
+    }
 
-        li.item1 {
-            @include bottom-left;
-
-            img {
-                @include imageSmaller;
-            }
-        }
-
-        li.item2 {
-            @include bottom-right;
-
-            img {
-                @include imageSmaller;
-            }
-        }
-
-        li.item3 {
-            @include bottom-left;
-        }
-
-        li.item4 {
-            @include top-right;
-
-        }
-
-        li.item5 {
-            @include bottom-right;
-            
-            img {
-                @include imageSmaller;
-            }
+    .img-bottom-left {
+        align-self: end;
+        img {
+        @include imageSmaller;
         }
     }
+
+    .img-top-right {
+        justify-self: end;
+    }
+
+    .img-bottom-right {
+        justify-self: end;
+        align-self: end;
+        img {
+        @include imageSmaller;
+        }
+    }
+
+
+
+
+        // Position and sizing for gallery Images
+        // li.item0{
+        //     @extend .img-center;
+        // }
+
+        // li.item1 {
+        //     // @include bottom-left;
+
+        //     // img {
+        //     //     @include imageSmaller;
+        //     // }
+        //     @extend .img-top-right;
+        // }
+
+        // li.item2 {
+        //     @include bottom-right;
+
+        //     img {
+        //         @include imageSmaller;
+        //     }
+        // }
+
+        // li.item3 {
+        //     @include bottom-left;
+        // }
+
+        // li.item4 {
+        //     @include top-right;
+
+        // }
+
+        // li.item5 {
+        //     @include bottom-right;
+            
+        //     img {
+        //         @include imageSmaller;
+        //     }
+        // }
+    }
 }
-
-
-
 

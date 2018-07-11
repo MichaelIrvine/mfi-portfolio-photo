@@ -54,5 +54,16 @@ $mobileButton.click(function(){
 
 
 
+// ----------- Dynamically add size and position to Images in galleries
 
+const listItems = $('li.items');
+const $aligners  = ["img-center",
+                    "img-bottom-left",
+                    "img-top-right",
+                    "img-bottom-right"];
+            
+
+  $(listItems).each(function (index) {
+    $(this).attr("class", $aligners[index]);
+  });
 });
