@@ -1,11 +1,11 @@
 jQuery(document).ready(function($) {
   const $btn      = $('.menu-toggle');
-  const $menuList = $(".menu-item-23, .menu-item-24, .menu-item-25");
+  const $menuList = $(".menu-item-16, .menu-item-15, .menu-item-14");
 
   // Desktop menu hide on scroll
   $(window).scroll(function() {
     
-    const scrollTrigger = window.pageYOffset > 250;
+    const scrollTrigger = window.pageYOffset > 50;
     
     if (scrollTrigger) {
       // Hides menu when viewer scrolls down
@@ -63,7 +63,13 @@ const $aligners  = ["img-center",
                     "img-bottom-right"];
             
 
-  $(listItems).each(function (index) {
-    $(this).attr("class", $aligners[index]);
-  });
+  // $(listItems).each(function (index) {
+  //   $(this).addClass($aligners[index % 4]);
+  // });
+
+    $(listItems).each(function(index) {
+      $(this).addClass($aligners[parseInt(Math.random() * 1000, 10) % 4]);
+    });
 });
+
+

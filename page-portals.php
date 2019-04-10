@@ -15,26 +15,27 @@
 get_header(); ?>
 
 		<main id="main" class="site-main">
+			<div class="pre-loader pre-load-hide"></div>
 
 			<?php
 			while ( have_posts() ) : the_post();
 
 				get_template_part( 'template-parts/content', 'page' );
 
-				$images = get_field('portals_one');
-				$size = 'full'; // (thumbnail, medium, large, full or custom size)
+				$images = get_field('projects_gallery');
 				$i    = 0;
 
 				if( $images ): ?>
 
 				
 				<section class="gallery">
-				<ul class="gallery_portals">
+				<ul class="gallery-list">
 				<?php foreach( $images as $image ): ?>
 					<li class="items item<?php echo $i++; // increment it! ?>">
-						<?php 
-							echo wp_get_attachment_image( $image['ID'], $size );
-						?>
+						<?php ?>
+							
+						<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"/>
+						
 					</li>					
 				<?php endforeach; ?>
 				</ul>

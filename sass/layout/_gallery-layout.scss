@@ -1,9 +1,13 @@
 //  Grid Gallery Layout
-    
+
 
 .gallery {
+
+    @media screen and (max-width: 420px){
+        padding: 0 2vw;    
+    }
     
-    .gallery_portals {
+    .gallery-list {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 10em 2em;
@@ -49,47 +53,6 @@
         }
     }
 
-
-
-
-        // Position and sizing for gallery Images
-        // li.item0{
-        //     @extend .img-center;
-        // }
-
-        // li.item1 {
-        //     // @include bottom-left;
-
-        //     // img {
-        //     //     @include imageSmaller;
-        //     // }
-        //     @extend .img-top-right;
-        // }
-
-        // li.item2 {
-        //     @include bottom-right;
-
-        //     img {
-        //         @include imageSmaller;
-        //     }
-        // }
-
-        // li.item3 {
-        //     @include bottom-left;
-        // }
-
-        // li.item4 {
-        //     @include top-right;
-
-        // }
-
-        // li.item5 {
-        //     @include bottom-right;
-            
-        //     img {
-        //         @include imageSmaller;
-        //     }
-        // }
     }
 }
 

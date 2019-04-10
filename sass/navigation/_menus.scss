@@ -27,7 +27,7 @@
       display: flex;
       position: fixed;
       top: 12px;
-      right: 60px;
+      right: 160px;
       margin: 0;
       padding: 0;
       z-index: 99;
@@ -37,24 +37,20 @@
       margin-right: 30px;
       cursor: pointer;
 
-      a{
-      font-family: $font__main;
-      font-size: 0.85em;
+      a {
+      font-size: 1em;
       }
       
     }
 
-    .menu-item-23 {
+    .menu-item:first-child {
       transition: all 0.3s ease;
     }
 
-    .menu-item-25 {
+    .menu-item:nth-child(2) {
       transition: all 0.6s ease;
     }
 
-    .menu-item-24 {
-      transition: all 0.9s ease;
-    }
 
     .hide-menu {
       opacity: 0;
@@ -74,7 +70,7 @@
         ul.sub-menu {
             position: absolute;
             top: 15px;
-            right: 145px;
+            right: 60px;
             display: none;
             min-width: 70%;
             padding: 20px;
@@ -94,7 +90,7 @@
 
         }
 
-.menu .menu-item-23:hover .sub-menu  {
+ .menu-item-has-children:hover .sub-menu  {
     display: block;
 }
 
@@ -256,17 +252,17 @@ ul.underline {
     @media screen and ( max-width: 700px ){
     display: flex;
     position: fixed;
-    top: 20%;
-    left: 10%;
-    border-left: 1px solid black;
+    top: 50%;
+    left: 50%;
     animation-delay: 0.7s;
+    transform: translate(-50%, -50%)
   }
 
   .active-fade {
       animation: fadeIn 2s forwards;
     }
 
-  #menu-3 {
+  .menu {
     list-style: none;
     margin: 0;
     padding-left: 1em;
@@ -277,8 +273,10 @@ ul.underline {
       animation-delay: 0.7s;
 
       a {
-        font-size: 1.3em;
+        font-size: 13vw;
+        font-family: $font__bernina;
         -webkit-font-smoothing: antialiased;
+
       }
     }
 
@@ -295,6 +293,9 @@ ul.underline {
 
 }
 
+  li.active-open {
+    display: flex;
+  }
 
 
 @keyframes growUp {

@@ -14,25 +14,65 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+	<div id="primary-front-page" class="content-area-front-page">
+		<main id="main-front-page" class="site-main front-page-main">
+			<div class="pre-loader pre-load-hide"></div>
+			
+			<!-- Gallery One -->
+			<div class="fp-gallery-one-container">
+			<?php 
 
-			<?php
-			while ( have_posts() ) : the_post();
+			$fpGalleryOne = get_field('fp_gallery_one');
+			
+			if( $fpGalleryOne ): ?>
+				<ul class='fp-gallery-one'>
+					<?php foreach( $fpGalleryOne as $image ): ?>
+						<li>
+							<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"/>
+						</li>
+					<?php endforeach; ?>
+				</ul>
+			<?php endif; ?>
+			</div> <!-- End of fp=gallery-one -->
 
-				get_template_part( 'template-parts/content', 'page' );
+			<!-- Gallery Two -->
+			<div class="fp-gallery-two-container">
+			<?php 
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
+			$fpGalleryTwo = get_field('fp_gallery_two');
+			
+			if( $fpGalleryTwo ): ?>
+				<ul class='fp-gallery-two'>
+					<?php foreach( $fpGalleryTwo as $imageTwo ): ?>
+						<li>
+							<img src="<?php echo $imageTwo['url']; ?>" alt="<?php echo $imageTwo['alt']; ?>"/>
+						</li>
+					<?php endforeach; ?>
+				</ul>
+			<?php endif; ?>
+			</div> <!-- End of fp-gallery-two -->
 
-			endwhile; // End of the loop.
-			?>
+			<!-- Gallery Two -->
+			<div class="fp-gallery-three-container">
+			<?php 
+
+			$fpGalleryThree = get_field('fp_gallery_three');
+			
+			if( $fpGalleryThree ): ?>
+				<ul class='fp-gallery-three'>
+					<?php foreach( $fpGalleryThree as $imageThree ): ?>
+						<li>
+							<img src="<?php echo $imageThree['url']; ?>" alt="<?php echo $imageThree['alt']; ?>"/>
+						</li>
+					<?php endforeach; ?>
+				</ul>
+			<?php endif; ?>
+			</div> <!-- End of fp-gallery-three -->
+
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
+	<!-- <div><h1>hello worms</h1></div> -->
 <?php
 get_sidebar();
 get_footer();

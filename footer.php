@@ -14,13 +14,15 @@
 </div><!-- #content -->
 
 <footer id="colophon" class="site-footer">
-	<div class="mobile-cover">		
+	<div class="mobile-cover">	
+		
 		<?php
 			wp_nav_menu( array(
 				'theme_location' => 'mobile',
 				'menu_id'        => 'menu-3'
 			));
 		?>
+		
 	</div> <!-- end of .mobile-cover --> 
 			  
 	<div class="round-btn">

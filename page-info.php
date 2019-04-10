@@ -14,16 +14,14 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
-
-			<?php
-			while ( have_posts() ) : the_post();
-
-				get_template_part( 'template-parts/content', 'page' );
-
-			endwhile; // End of the loop.
-			?>
+	<div id="primary-info" class="content-area">
+		<main id="main-info" class="site-main info-main">
+			<div class="pre-loader pre-load-hide"></div>
+				<?php 
+				$image = get_field('info_image');
+				if( !empty($image) ): ?>
+					<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+				<?php endif; ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

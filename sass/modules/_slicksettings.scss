@@ -1,0 +1,57 @@
+/*
+** Front Page Galley Sliders
+*/
+.fp-gallery-one {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease;
+    display: flex;
+    justify-content: flex-end;
+    height: auto;
+    max-width: 600px;
+    max-height: 400px;
+}
+
+.fp-gallery-one.slick-initialized {
+    visibility: visible;
+    opacity: 1; 
+}
+
+// Gallery Two
+
+.fp-gallery-two {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease;
+    display: flex;
+    justify-content: flex-end;
+    height: auto;
+    max-width: 600px;
+    max-height: 400px;
+}
+
+
+.fp-gallery-two.slick-initialized {
+    visibility: visible;
+    opacity: 1; 
+}
+
+
+// Gallery Three
+
+.fp-gallery-three {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease;
+    display: flex;
+    justify-content: flex-end;
+    height: auto;
+    max-width: 600px;
+    max-height: 400px;
+}
+
+
+.fp-gallery-three.slick-initialized {
+    visibility: visible;
+    opacity: 1; 
+}

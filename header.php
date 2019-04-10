@@ -35,7 +35,7 @@
 					<li class="line-two"></li>
 				</ul>
 			</button>
-			    
+			<div class="menu-main-menu-container">
 			<?php
 				wp_nav_menu( array(
 					'theme_location' => 'menu-1',
@@ -43,6 +43,7 @@
 				) );
 
 			?>
+			</div>
 
 		</nav><!-- #site-navigation -->
 

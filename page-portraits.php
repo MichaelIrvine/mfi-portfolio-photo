@@ -22,18 +22,25 @@ get_header(); ?>
 
 				get_template_part( 'template-parts/content', 'page' );
 
-			$images = get_field('people_gallery');
-			$size = 'full'; // (thumbnail, medium, large, full or custom size)
+				$images = get_field('projects_gallery');
+				$size = 'full'; // (thumbnail, medium, large, full or custom size)
+				$i    = 0;
 
-			if( $images ): ?>
-				<ul>
-					<?php foreach( $images as $image ): ?>
-						<li>
-							<?php echo wp_get_attachment_image( $image['ID'], $size ); ?>
-						</li>
-					<?php endforeach; ?>
+				if( $images ): ?>
+
+				<section class="gallery">
+				<ul class="gallery-list">
+				<?php foreach( $images as $image ): ?>
+					<li class="items item<?php echo $i++; // increment it! ?>">
+						<?php 
+							echo wp_get_attachment_image( $image['ID'], $size );
+						?>
+					</li>					
+				<?php endforeach; ?>
 				</ul>
-			<?php endif; ?>
+				</section>
+					
+				<?php endif; ?>
 
 			<?php
 			endwhile; // End of the loop.

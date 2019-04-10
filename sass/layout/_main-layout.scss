@@ -1,8 +1,11 @@
-// main grid
+// [main grid]
+
+
 .site {
     display: grid;
     grid-template-columns: 110px 1fr;
     grid-template-rows: 110px auto;
+    
 
     @media screen and ( max-width: 600px ) {
         grid-template-columns: 1fr;
@@ -17,9 +20,10 @@
 
         .site-title__mobile {
             font-size: 1.5em;
-            font-family: $font__title;
-            font-weight: 300;
-            justify-self: center;
+            font-family: $font__bernina;
+            font-weight: 400;
+            justify-self: start;
+            padding-left: 70px;
             transform: translateY( -100px );
             transition: all 0.8s ease-in;
             -webkit-font-smoothing: antialiased;
@@ -47,8 +51,8 @@
        h1.site-title {
             transform: rotate(-90deg);
             font-size: 1.5em;
-            font-family: $font__title;
-            font-weight: 300;
+            font-family: $font__bernina;
+            font-weight: 400;
             -webkit-font-smoothing: antialiased;
         }
 
@@ -69,6 +73,26 @@
 }
 
 
+.front-page-main {
+
+    .fp-gallery-one-container {
+        display: flex;
+        justify-content: flex-end;
+        transform: translateX(-14%);
+    }
+
+    .fp-gallery-two-container {
+        display: flex;
+        justify-content: center;
+        transform: translate(-24%, -30%);
+    }
+
+    .fp-gallery-three-container {
+        display: flex;
+        justify-content: flex-end;
+        transform: translate(0%, -50%);
+    }
+}
 
 
 
