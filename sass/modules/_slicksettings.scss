@@ -55,3 +55,23 @@
     visibility: visible;
     opacity: 1; 
 }
+
+// Gallery Mobile
+
+.fp-gallery-mobile {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease;
+    display: flex;
+    justify-content: flex-end;
+    height: auto;
+    max-width: 600px;
+    max-height: 400px;
+    padding: 5vw;
+}
+
+
+.fp-gallery-mobile.slick-initialized {
+    visibility: visible;
+    opacity: 1; 
+}

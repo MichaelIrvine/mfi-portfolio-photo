@@ -65,5 +65,18 @@ jQuery(document).ready(function($) {
       ]
     });
 
+    $(".fp-gallery-mobile").slick({
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 3500,
+      speed: 1000,
+      adaptiveHeight: false,
+      fade: true,
+      arrows: false,
+      dots: false,
+    });
+
 
 });

@@ -69,6 +69,26 @@ get_header(); ?>
 			<?php endif; ?>
 			</div> <!-- End of fp-gallery-three -->
 
+			<div class="fp-gallery-mobile-container">
+			<?php 
+
+			$fpGalleryMobile = get_field('fp_gallery_mobile');
+			
+			if( $fpGalleryMobile ): ?>
+				<ul class='fp-gallery-mobile'>
+					<?php foreach( $fpGalleryMobile as $imageMobile ): ?>
+						<li>
+							<img src="<?php echo $imageMobile['url']; ?>" alt="<?php echo $imageMobile['alt']; ?>"/>
+						</li>
+					<?php endforeach; ?>
+				</ul>
+			<?php endif; ?>
+			</div> <!-- End of fp-gallery-three -->
+
+			<div class="fp-contact">
+				<?php the_field('contact_details'); ?>
+			</div>
+
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
