@@ -14,8 +14,9 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+	<div id="primary-portraits" class="content-area">
+		<main id="main-portraits" class="site-main portraits-main">
+			<div class="pre-loader pre-load-hide"></div>
 
 			<?php
 			while ( have_posts() ) : the_post();

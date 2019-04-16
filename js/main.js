@@ -1,27 +1,82 @@
 (function() {
+  // --------------------------------------------------------------------------
+  // ------------------ Check Page - Apply Line Class -------------------------
+  // --------------------------------------------------------------------------
+
   const menuButton = document.querySelector(".menu-toggle");
   const menuList = document.querySelectorAll(".menu > .menu-item");
   const lineOne = document.querySelector(".line-one");
   const lineTwo = document.querySelector(".line-two");
+  const lineThree = document.querySelector(".line-three");
+  
 
+  const navUnderlinePos = function() {
+    const pageIsHome = document
+      .querySelector("body")
+      .classList.contains("home");
+
+    // Check Page for Home, Portals, Portraits
+    if (
+      pageIsHome ||
+      window.location.href.indexOf("portals") > -1 ||
+      window.location.href.indexOf("portraits") > -1
+    ) {
+      // Add styles
+      
+      lineTwo.style.display = "none";
+      lineOne.style.opacity = "1";
+
+      window.addEventListener('scroll', function(){
+        // Check Y scroll Pos
+      if (window.scrollY >= 50){
+        // When scrolling down add class
+        lineOne.classList.add('move-one');
+      } else {
+        // If Scroll Y is above 50 remove class
+        lineOne.classList.remove("move-one");
+      }
+      })
+      
+    }
+
+    // Check Page is Info Page
+    if (window.location.href.indexOf("info") > -1) {
+      
+      // Add styles for info link
+      lineOne.style.display = 'none';
+      lineTwo.style.opacity = "1";
+
+      window.addEventListener('scroll', function(){
+        // Check Scroll Y Pos
+      if (window.scrollY >= 50){
+        // When scrolling down add class
+        lineTwo.classList.add("move-two");
+      } else {
+        // If Scroll Y is above 50 remove class
+        lineTwo.classList.remove("move-two");
+      }
+      })
+      
+    }
+  };
 
   const menuAnimator = function() {
     if (window.scrollY >= 50) {
       // Animate the Main Menu out of view
       menuList.forEach(el => el.classList.add("hide-menu"));
       // Animate the first line
-      lineOne.classList.add("line-one-animate");
+      // lineOne.removeAttribute("style");
       // Animate the second line
-      lineTwo.classList.add("line-two-animate");
-      //A11Y
+      lineThree.classList.add("line-three-animate");
+
       menuButton.classList.add("button-animate");
     } else {
       // Animate the Main Menu into view
       menuList.forEach(el => el.classList.remove("hide-menu"));
       // Animate the first line
-      lineOne.classList.remove("line-one-animate");
+      // lineOne.style.transform = "translateX(-230px)";
       // Animate the second line
-      lineTwo.classList.remove("line-two-animate");
+      lineThree.classList.remove("line-three-animate");
       //A11Y
       menuButton.classList.remove("button-animate");
     }
@@ -44,7 +99,12 @@
 
   const mobileMenuAnimator = function() {
     mobileCover.classList.toggle("active");
-    if (mobileCover.classList.contains("active")) {
+    
+    setTimeout(() => {
+      mobileCover.classList.toggle("open");
+    }, 300);
+
+    if (mobileCover.classList.contains("active")) {  
       menuContainer.classList.add("active-fade");
       mobileMenuItems.forEach(el => {
         el.classList.add("active-open");
@@ -55,10 +115,11 @@
     } else {
       mobileMenuItems.forEach(el => {
         el.classList.remove("active-fade");
-        el.classList.add("active-open");
+        el.classList.remove("active-open");
       });
 
       menuContainer.classList.remove("active-fade");
+      
     }
   };
 
@@ -82,6 +143,10 @@
     });
   };
 
+  // --------------------------------------------------------------------------
+  // ---------------------- Page Transitions ----------------------------------
+  // --------------------------------------------------------------------------
+
   const preLoader = function() {
     const preLoader = document.querySelector(".pre-loader");
 
@@ -90,12 +155,51 @@
       setTimeout(() => {
         preLoader.classList.add("disabled");
       }, 1000);
-    }, 2000);
+    }, 1500);
   };
 
+  // Add Pre Loader if link has been clicked
+
+  const navElements = document.querySelector("#menu-item-94");
+  const subNavElems = document.querySelectorAll(".sub-menu > .menu-item");
+  const navTitle = document.querySelector(".site-title a");
+
+  const links = [navElements, ...subNavElems, navTitle];
+
+  console.log(navElements);
+  
+  const toggleLoader = function() {
+    if (document.querySelector(".pre-loader").classList.contains("disabled")) {
+      document.querySelector(".pre-loader").classList.remove("disabled");
+      setTimeout(() => {
+        document.querySelector(".pre-loader").classList.add("pre-load-hide");
+      }, 300);
+    }
+  };
+
+
+  const hideContent = function() {
+    const siteContent = document.querySelector('.site-content');
+    siteContent.classList.add('hide');
+  };
+
+  const showContent = function() {
+    const siteContent = document.querySelector(".site-content");
+    siteContent.classList.remove("hide");
+  };
+
+  links.forEach(link => link.addEventListener("click", toggleLoader));
+
+  // Functions
+  navUnderlinePos();
   imageRandom();
   preLoader();
+
+
+  // Events
   window.addEventListener("scroll", menuAnimator);
   menuButton.addEventListener("click", displayDesktopMenu);
   mobileButton.addEventListener("click", mobileMenuAnimator);
+  document.querySelector('.menu-item-has-children').addEventListener('mouseover', hideContent);
+  document.querySelector('.menu-item-has-children').addEventListener('mouseout', showContent);
 })();
